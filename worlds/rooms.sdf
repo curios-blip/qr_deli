@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<sdf version="1.10"><world name="rooms">
+  <physics name="1ms" type="ignored"><max_step_size>0.001</max_step_size><real_time_factor>1.0</real_time_factor></physics>
+  <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+  <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+  <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+  <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"><render_engine>ogre2</render_engine></plugin>
+  <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+  <light type="directional" name="sun"><cast_shadows>false</cast_shadows><pose>0 0 10 0 0 0</pose>
+    <diffuse>1 1 1 1</diffuse><specular>0.2 0.2 0.2 1</specular><direction>-0.3 0.2 -0.9</direction></light>
+  <light type="directional" name="fill"><cast_shadows>false</cast_shadows><pose>0 0 10 0 0 0</pose><diffuse>1 1 1 1</diffuse><specular>0 0 0 1</specular><direction>0.3 -0.2 -0.9</direction></light>
+  <model name="ground"><static>true</static><link name="link">
+    <collision name="c"><geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry></collision>
+    <visual name="v"><geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry>
+      <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual></link></model>
+  <model name="walls"><static>true</static><link name="link">
+      <collision name="c0"><pose>0.0 0.0 0.6 0 0 0</pose><geometry><box><size>0.1 8.1 1.2</size></box></geometry></collision>
+      <visual name="v0"><pose>0.0 0.0 0.6 0 0 0</pose><geometry><box><size>0.1 8.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c1"><pose>8.0 0.0 0.6 0 0 0</pose><geometry><box><size>0.1 8.1 1.2</size></box></geometry></collision>
+      <visual name="v1"><pose>8.0 0.0 0.6 0 0 0</pose><geometry><box><size>0.1 8.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c2"><pose>4.0 4.0 0.6 0 0 0</pose><geometry><box><size>8.1 0.1 1.2</size></box></geometry></collision>
+      <visual name="v2"><pose>4.0 4.0 0.6 0 0 0</pose><geometry><box><size>8.1 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c3"><pose>4.0 -4.0 0.6 0 0 0</pose><geometry><box><size>8.1 0.1 1.2</size></box></geometry></collision>
+      <visual name="v3"><pose>4.0 -4.0 0.6 0 0 0</pose><geometry><box><size>8.1 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c4"><pose>4.0 2.5 0.6 0 0 0</pose><geometry><box><size>0.1 3.1 1.2</size></box></geometry></collision>
+      <visual name="v4"><pose>4.0 2.5 0.6 0 0 0</pose><geometry><box><size>0.1 3.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c5"><pose>4.0 -2.5 0.6 0 0 0</pose><geometry><box><size>0.1 3.1 1.2</size></box></geometry></collision>
+      <visual name="v5"><pose>4.0 -2.5 0.6 0 0 0</pose><geometry><box><size>0.1 3.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c6"><pose>0.7 1.0 0.6 0 0 0</pose><geometry><box><size>1.5 0.1 1.2</size></box></geometry></collision>
+      <visual name="v6"><pose>0.7 1.0 0.6 0 0 0</pose><geometry><box><size>1.5 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c7"><pose>4.0 1.0 0.6 0 0 0</pose><geometry><box><size>2.9000000000000004 0.1 1.2</size></box></geometry></collision>
+      <visual name="v7"><pose>4.0 1.0 0.6 0 0 0</pose><geometry><box><size>2.9000000000000004 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c8"><pose>7.3 1.0 0.6 0 0 0</pose><geometry><box><size>1.5000000000000004 0.1 1.2</size></box></geometry></collision>
+      <visual name="v8"><pose>7.3 1.0 0.6 0 0 0</pose><geometry><box><size>1.5000000000000004 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c9"><pose>0.7 -1.0 0.6 0 0 0</pose><geometry><box><size>1.5 0.1 1.2</size></box></geometry></collision>
+      <visual name="v9"><pose>0.7 -1.0 0.6 0 0 0</pose><geometry><box><size>1.5 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c10"><pose>4.0 -1.0 0.6 0 0 0</pose><geometry><box><size>2.9000000000000004 0.1 1.2</size></box></geometry></collision>
+      <visual name="v10"><pose>4.0 -1.0 0.6 0 0 0</pose><geometry><box><size>2.9000000000000004 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+      <collision name="c11"><pose>7.3 -1.0 0.6 0 0 0</pose><geometry><box><size>1.5000000000000004 0.1 1.2</size></box></geometry></collision>
+      <visual name="v11"><pose>7.3 -1.0 0.6 0 0 0</pose><geometry><box><size>1.5000000000000004 0.1 1.2</size></box></geometry>
+        <material><ambient>0.8 0.8 0.75 1</ambient><diffuse>0.8 0.8 0.75 1</diffuse></material></visual>
+  </link></model>
+  
+    <model name="sign_room_101"><static>true</static>
+      <pose>2.9 0.94 0.2 1.5708 0 0</pose>
+      <link name="link"><visual name="v">
+        <geometry><plane><normal>0 0 1</normal><size>0.3 0.3</size></plane></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse>
+          <pbr><metal><albedo_map>/home/gowthami/qr_delivery/signs/room_102.png</albedo_map>
+          <metalness>0</metalness><roughness>1</roughness></metal></pbr></material>
+      </visual></link></model>
+    <model name="sign_room_102"><static>true</static>
+      <pose>6.9 0.94 0.2 1.5708 0 0</pose>
+      <link name="link"><visual name="v">
+        <geometry><plane><normal>0 0 1</normal><size>0.3 0.3</size></plane></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse>
+          <pbr><metal><albedo_map>/home/gowthami/qr_delivery/signs/room_101.png</albedo_map>
+          <metalness>0</metalness><roughness>1</roughness></metal></pbr></material>
+      </visual></link></model>
+    <model name="sign_room_103"><static>true</static>
+      <pose>2.9 -0.94 0.2 1.5708 0 3.14159</pose>
+      <link name="link"><visual name="v">
+        <geometry><plane><normal>0 0 1</normal><size>0.3 0.3</size></plane></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse>
+          <pbr><metal><albedo_map>/home/gowthami/qr_delivery/signs/room_103.png</albedo_map>
+          <metalness>0</metalness><roughness>1</roughness></metal></pbr></material>
+      </visual></link></model>
+    <model name="sign_room_104"><static>true</static>
+      <pose>6.9 -0.94 0.2 1.5708 0 3.14159</pose>
+      <link name="link"><visual name="v">
+        <geometry><plane><normal>0 0 1</normal><size>0.3 0.3</size></plane></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse>
+          <pbr><metal><albedo_map>/home/gowthami/qr_delivery/signs/room_104.png</albedo_map>
+          <metalness>0</metalness><roughness>1</roughness></metal></pbr></material>
+      </visual></link></model>
+</world></sdf>
